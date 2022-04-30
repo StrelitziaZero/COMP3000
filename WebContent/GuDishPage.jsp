@@ -97,7 +97,7 @@ if(shopUser==null&&session.getAttribute("user3")==null)
 <form action="GuDishUpdate.jsp" method="post" >
 <input type="submit" value="Dish Update"  style="width:300px;height:30%;font-size:16px"/>
 </form><br/>
-<form action="GuDishSearch.jsp" method="post" >
+<form action="GuDishSearchAdmin.jsp" method="post" >
 <input type="submit" value="Dish Search"  style="width:300px;height:30%;font-size:16px"/>
 </form><br/>
 <form action="wkf.jsp" method="post" >

@@ -19,18 +19,19 @@
     GuDishDB guDishDB = new GuDishDB();
 	String sql = "select * from dish  order by id desc";
 	int pageNo=1;
-	int pageSize=15;
+	int pageSize=99;
 	List<GuDish> guDishList = guDishDB.searchGuDish(sql,pageNo,pageSize);
 	//out.println(buyCartList.size());
 	 GuComDB guComDB = new GuComDB();
 	String sql2 = "select * from comment  order by id desc";
 	int pageNo2=1;
-	int pageSize2=15;
+	int pageSize2=99;
 	List<GuCom> guComList = guComDB.searchGuCom(sql2,pageNo2,pageSize2);
 	
 	
 	
 %>
+<br/>
 <form action="GuDish.jsp" method="post" >
 <input type="submit" value="Back"  />
 </form><br/>
@@ -41,7 +42,7 @@
 <!-- The header of the output list -->
 <th>ID</th>
 <th>Dishes Name</th>
-<th>Dining Name</th>
+<th>Dining Hall Name</th>
 <th>Dishes Type</th>
 <th>Dishes Total</th>
 <th>Dishes Finish Time</th>
@@ -107,6 +108,11 @@
  <br/>
 <form action="GuDishSearch.jsp" method="post" >
 <input type="submit" value="Search Dishes" />
+</form>
+ <br/>
+ 
+    <form action="GuChart.jsp" method="post" >
+<input type="submit" value="Comment Statistics" />
 </form>
  <br/>
 

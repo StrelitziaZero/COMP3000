@@ -47,6 +47,17 @@ if(idd!=null&&score!=null&&comm!=null&&idd!=""&&score!=""&&comm!=""){
 
 
 //LOGIN, Method for identifying user login status
+ShopUser shopUser =(ShopUser) session.getAttribute("user");
+if(shopUser==null&&session.getAttribute("user3")==null&&session.getAttribute("user2")==null)
+{
+	%>
+	<script>
+	alert('Need login');
+	</script>
+	<% 
+	response.sendRedirect("login22.jsp");
+	return;
+}
 
 
     //Method and database statement for displaying information in database, dish list

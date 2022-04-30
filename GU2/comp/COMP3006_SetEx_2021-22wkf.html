@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="https://unpkg.com/mocha/mocha.css" />
+        <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
+        <script src="sessions.js"></script>
+
+        <style>
+            /* Your CSS code goes here. */
+            body{
+                background-color: #99ffff;
+                font-family: Verdana;
+            }
+            h1{
+                font-size: 36px;
+            }
+            .day{
+                border: 1px solid #000;
+                float: left;
+                width: 19%;
+            } 
+            .session{
+                background-color: #dfdfdf;
+                height: 120px;
+                width: 80%;
+                margin: 5%;
+                padding: 5%;
+            }
+            .active{
+                background-color: #f0fbfc;                  
+            }
+            #errors li{
+                color: #ff0000;
+            }
+            
+        </style>
+
+        <script>
+            // Classes/functions go here.
+
+           class Session{
+               constructor(title,sessionTime,staff){
+                   this.title=title;
+                   this.sessionTime=sessionTime;
+                   this.staff=staff;
+                   //this.mydate=mydate;
+               }
+               
+               
+               getSessionId(){
+                //mydate=this.sessionTime.getDay();
+                var b="";
+                switch(this.sessionTime.getDay()){
+                    case 1:
+                    return "mon_"+this.sessionTime.getHours();
+                    b="mon_"+this.sessionTime.getHours();
+                    
+                    case 2:
+                    return "tue_"+this.sessionTime.getHours();
+                    b="tue_"+this.sessionTime.getHours();
+                    
+                    case 3:
+                    return "wed_"+this.sessionTime.getHours();
+                    b="wed_"+this.sessionTime.getHours();
+                    
+                    case 4:
+                    return "thu_"+this.sessionTime.getHours();
+                    b="thu_"+this.sessionTime.getHours();
+                    
+                    case 5:
+                    return "fri_"+this.sessionTime.getHours();
+                    b="fri_"+this.sessionTime.getHours();
+                    
+                }
+               }
+               renderSession(){
+                   var a="";
+                switch(this.sessionTime.getDay()){
+                    case 1:
+                    a="mon_"+this.sessionTime.getHours();
+                    break;
+                    case 2:
+                    a="tue_"+this.sessionTime.getHours();
+                    break;
+                    case 3:
+                    a="wed_"+this.sessionTime.getHours();
+                    break;
+                    case 4:
+                    a="thu_"+this.sessionTime.getHours();
+                    break;
+                    case 5:
+                    a="fri_"+this.sessionTime.getHours();
+                    break;
+                }
+                  //document.getElementById(a).innerHTML="<p id='"+a+"_title' class='session'></br>"+this.title+"</p><p id='"+a+"_staff' class='session'></br>"+this.staff+"</p>";
+                  //document.getElementById(a).innerHTML="<p id='"+a+"_title' class='active1'></br>"+this.title+"</p><p id='"+a+"_staff' class='active1'></br>"+this.staff+"</p>";
+                  document.getElementById(a).innerHTML="<p class='active' id='"+a+"_title'>"+this.title+"</p></br><p id='"+a+"_staff' class='active'></br>"+this.staff+"</p>";
+                  //document.getElementById(a).innerHTML="<p id='"+a+"_title' class='active1'></br>"+this.title+"</p><p id='"+a+"_staff' class='active1'></br>"+this.staff+"</p>";
+                }              
+            }
+            //window.alert(Session.getSessionId());
+            //const session=new Session();
+            class Timetable{
+                constructor(sessions){
+                    this.sessions=[];
+                }
+                
+            }
+
+            $(window).on("load", function() {
+                // Application code to run when the page has loaded goes here
+            });
+        </script>
+        <title>Timetable Viewer</title>
+        
+    </head>
+
+    <body>
+        <!-- Do not edit this section. -->
+        <div id="mocha"></div>
+    
+        <script src="https://unpkg.com/chai/chai.js"></script>
+        <script src="https://unpkg.com/mocha/mocha.js"></script>
+    
+        <script class="mocha-init">
+            mocha.setup('tdd');
+            mocha.checkLeaks();
+        </script>
+        
+        <script src="COMP3006_SetEx_2021-22_Tests.js"></script>
+        
+        <script class="mocha-exec">
+            mocha.run();
+        </script>
+
+        <!-- Your HTML goes here. -->
+        <h1>Timetable Viewer</h1>
+        <div id="timetable">        
+            <div class="day" id="mon"> 
+                <p>Monday</p>
+                <div class="session" id="mon_9"><p>9am</p></div>
+                <div class="session" id="mon_11"><p>11am</p></div>
+                <div class="session" id="mon_14"><p>2pm</p></div>
+                <div class="session" id="mon_16"><p>4pm</p></div>
+            </div>
+            <div class="day" id="tue">
+            <p>Tuesday</p>
+                <div class="session active" id="tue_9"><p>9am</p></div>
+                <div class="session" id="tue_11"><p>11am</p></div>
+                <div class="session" id="tue_14"><p>2pm</p></div>
+                <div class="session" id="tue_16"><p>4pm</p></div>
+            </div>
+            <div class="day" id="wed">
+            <p>Wednesday</p>
+                <div class="session" id="wed_9"><p>9am</p></div>
+                <div class="session" id="wed_11"><p>11am</p></div>
+                <div class="session" id="wed_14"><p>2pm</p></div>
+                <div class="session" id="wed_16"><p>4pm</p></div>
+            </div>
+            <div class="day" id="thu">
+            <p>Thursday</p>
+                <div class="session" id="thu_9"><p>9am</p></div>
+                <div class="session" id="thu_11"><p>11am</p></div>
+                <div class="session" id="thu_14"><p>2pm</p></div>
+                <div class="session" id="thu_16"><p>4pm</p></div>
+            </div>
+            <div class="day" id="fri">
+            <p>Friday</p>
+                <div class="session" id="fri_9"><p>9am</p></div>
+                <div class="session" id="fri_11"><p>11am</p></div>
+                <div class="session" id="fri_14"><p>2pm</p></div>
+                <div class="session" id="fri_16"><p>4pm</p></div>
+        </div>
+        </div>
+        <h2>Errors</h2>
+        <ul id="errors"></ul>
+        <button id="display">Display Sessions</button>
+        <button id="clear">Clear Sessions</button>
+    </body>
+</html>
