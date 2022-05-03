@@ -73,7 +73,7 @@ float a=300;
 </form>
 
 <!--Page jump button  -->
-<form action="GuComChange.jsp" method="post" >
+<form action="GuWatch2.jsp" method="post" >
 <input type="submit" value="Back"  style="width:300px;height:30%;font-size:16px"/>
 </form><br/>
 <form action="wkf.jsp" method="post" >

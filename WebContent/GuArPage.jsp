@@ -143,8 +143,8 @@ var pwd3=document.getElementById("p1");
 <!--Page jump button  -->
 <tr>
 <td>
-<form action="loginchose.jsp" method="post" >
-<input type="submit" value="Back to login"  style="width:300px;height:30%;font-size:16px"/>
+<form action="GuWatch2.jsp" method="post" >
+<input type="submit" value="Back"  style="width:300px;height:30%;font-size:16px"/>
 </form>
 <br/>
 

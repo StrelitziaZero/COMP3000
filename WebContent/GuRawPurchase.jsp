@@ -109,13 +109,11 @@ Calendar cal=Calendar.getInstance(TimeZone.getTimeZone("GMT+08:00"));
 int year=cal.get(Calendar.YEAR);
 int month=cal.get(Calendar.MONTH)+1;
 int day=cal.get(Calendar.DAY_OF_MONTH);
-year=year+1;
-month=month+1;
-day=day+1;
+
 
 //Method and database statement for displaying information in database
     GuSalesDB guSalesDB = new GuSalesDB();
-	String sql =  "  select ID,name,total,purdate,exdate,exdate1,exdate2 ,if(exdate<"+year+"&&exdate1<"+month+"&&exdate2<"+day+",'"+"Past Due"+"','"+"normal"+"') as exdate3 from sales";
+	String sql =  "  select ID,name,total,purdate,exdate,exdate1,exdate2 ,if((exdate<"+year+")||(exdate="+year+"&&exdate1<"+month+")||(exdate="+year+"&&exdate1="+month+"&&exdate2<"+day+"),'"+"Past Due"+"','"+"normal"+"') as exdate3 from sales";
 	int pageNo=1;
 	int pageSize=15;
 	List<GuRaw> guSalesList = guSalesDB.searchGuSales(sql,pageNo,pageSize);
@@ -163,7 +161,7 @@ day=day+1;
 </form>
 
 <% out.println("<h3><font color=blue>Purchase</font></h3>");%>
-<% out.println("<h5><font color=purple>About the [Expiration days].You only need to enter the number of days for the shelf life <br/>of the material,and the system will automatically calculate it as the specific date.</font></h5>");%>
+<% out.println("<h5><font color=purple>If the product offers a shelf life of a specific number of days, You only need to enter the number of days for the shelf life <br/>of the material,and the system will automatically calculate it as the specific date.</font></h5>");%>
 <form action="GuRawPage.jsp" method="post" >
 <table>
 
@@ -180,7 +178,7 @@ day=day+1;
 
 
 <tr>
-<td>Expiration days</td>
+<td>Shelf life</td>
 <td><input name="exdate" type="number"/> days</td>
 </tr>
 

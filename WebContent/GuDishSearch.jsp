@@ -101,7 +101,7 @@ String abc="shop_user";
 <th>ID</th>
 <th>Dishes Name</th>
 <th>Dishes unit price(RMB)</th>
-<th>Dining Name</th>
+<th>Dining Hall Name</th>
 <th>Dishes Type</th>
 <th>Dishes Total</th>
 <th>Finish Time</th>
@@ -133,7 +133,7 @@ String abc="shop_user";
  <!--Page jump button  -->
 <tr>
 <td>
-<form action="GuDishPage.jsp" method="post" >
+<form action="GuWatch2.jsp" method="post" >
 <input type="submit" value="Back"  style="width:300px;height:30%;font-size:16px"/>
 </form>
 

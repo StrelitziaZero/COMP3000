@@ -60,7 +60,7 @@ if(shopUser==null&&session.getAttribute("user3")==null)
 <th>ID</th>
 <th>Dishes Name</th>
 <th>Dishes unit price(RMB)</th>
-<th>Dining Name</th>
+<th>Dining Hall Name</th>
 <th>Dishes Type</th>
 <th>Dishes Total</th>
 <th>Finish Time</th>

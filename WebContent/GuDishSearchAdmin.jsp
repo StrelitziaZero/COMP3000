@@ -77,7 +77,7 @@ String abc="shop_user";
 <select name="bb" id="bb" style="width:240px" >
 <option value="Dname">Dishes name</option>
 <option value="price" }>Price</option>
-<option value="Cname" }>Dining name</option>
+<option value="Cname" }>Dining Hall name</option>
 <option value="Dtype">Type</option>
 <option value="total">Total</option>
 <option value="dtime">Dish Finish time</option>

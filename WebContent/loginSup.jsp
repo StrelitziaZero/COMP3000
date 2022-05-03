@@ -49,7 +49,7 @@ if(username!=null&&password!=null)
 <form action="loginSup.jsp" method="post">
 
 
-<p align=center>SupAdmin Login</p>
+<p align=center><h3><font color=red>Super Administrator Login</font></h3></p>
 <table align=center>
 
 
@@ -67,8 +67,10 @@ if(username!=null&&password!=null)
 </tr>
 
 <tr> 
-<td colspan="2"><input type="submit"  value="Login"/></td>
+
+<td colspan="2" align=center></br><input type="submit"  value="Login"/></td>
 </tr>
+
 </table>
 
 </form>

@@ -51,7 +51,7 @@ String abc="shop_user";
 	}
 
 //Method for identifying user login status
-ShopUser shopUser =(ShopUser) session.getAttribute("user");
+ShopUser shopUser =(ShopUser) session.getAttribute("user3");
 if(shopUser==null&&session.getAttribute("user3")==null)
 {
 	%>
@@ -59,7 +59,7 @@ if(shopUser==null&&session.getAttribute("user3")==null)
 	alert('Need login');
 	</script>
 	<% 
-	response.sendRedirect("login2.jsp");
+	response.sendRedirect("loginSup.jsp");
 	return;
 }
 	

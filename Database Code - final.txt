@@ -1,0 +1,477 @@
+
+mysql -uroot -p123456
+
+USE `bookstore`;
+--
+-- Table structure for table `dish`
+--
+
+DROP TABLE IF EXISTS `dish`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dish` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT ,
+  `Cname` varchar(50) DEFAULT NULL,
+  `price` varchar(50) DEFAULT NULL ,
+  `Dname` varchar(50) DEFAULT NULL,
+  `Dtype` varchar(50) DEFAULT NULL ,
+  `total` varchar(50) DEFAULT NULL ,
+  `dtime` varchar(50) DEFAULT NULL ,
+
+
+
+
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+truncate table dish;
+
+--
+-- Dumping data for table `dish`
+--
+
+LOCK TABLES `dish` WRITE;
+/*!40000 ALTER TABLE `dish` DISABLE KEYS */;
+
+INSERT INTO `dish` VALUES (1,'DiningHallNo.1','17','tomato egg','Lunch','200','2022-2-23-11:25'),(2,'DiningHallNo.1','20','Fresh chicken','Lunch','400','2022-2-24-5:22'),(3,'DiningHallNo.2','15','Carrot potato','Dinner','400','2022-2-27-4:15');
+
+/*!40000 ALTER TABLE `dish` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+--
+-- Table structure for table `sale`
+--
+
+DROP TABLE IF EXISTS `sale`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sale` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT ,
+  `cname` varchar(50) DEFAULT NULL,
+  `dname` varchar(50) DEFAULT NULL,
+  `dtype` varchar(50) DEFAULT NULL ,
+  `total` varchar(50) DEFAULT NULL ,
+  `wtotal` varchar(50) DEFAULT NULL ,
+  `waste` varchar(50) DEFAULT NULL ,
+  `warning` varchar(50) DEFAULT NULL ,
+   `ddtime` varchar(50) DEFAULT NULL ,
+
+
+
+
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+truncate table sale;
+
+--
+-- Dumping data for table `sale`
+--
+
+LOCK TABLES `sale` WRITE;
+/*!40000 ALTER TABLE `sale` DISABLE KEYS */;
+
+INSERT INTO `sale` VALUES (1,'DiningHallNo.1','tomato egg','Lunch','200','20','10','Steerable Waste','2022-2-23-11:25'),(2,'DiningHallNo.1','Fresh chicken','Lunch','400','40','10','Steerable Waste','2022-2-24-5:22'),(3,'DiningHallNo.2','Carrot potato','Dinner','200','50','25','Serious Waste','2022-2-27-4:15');
+
+/*!40000 ALTER TABLE `sale` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+
+
+
+--
+-- Table structure for table `sales`
+--
+
+DROP TABLE IF EXISTS `sales`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `sales` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT ,
+  `name` varchar(50) DEFAULT NULL,
+  `total` varchar(50) DEFAULT NULL,
+  `purdate` varchar(50) DEFAULT NULL ,
+  `exdate` varchar(50) DEFAULT NULL ,
+`exdate1` varchar(50) DEFAULT NULL ,
+`exdate2` varchar(50) DEFAULT NULL ,
+`exdate3` varchar(50) DEFAULT NULL ,
+
+
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+truncate table sales;
+
+--
+-- Dumping data for table `sales`
+--
+
+LOCK TABLES `sales` WRITE;
+/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+
+INSERT INTO `sales` VALUES (1,'tomato','30','2022-3-2','2022','3','27','normal'),(2,'beef','30','2022-3-2','2022','4','21','normal'),(3,'banana','20','2022-3-2','2022','3','15','normal');
+
+/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+--
+-- Table structure for table `function1`
+--
+
+
+DROP TABLE IF EXISTS `function1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `function1` (
+  `Id` int(11) NOT NULL ,
+  `FunctionName` varchar(40) NOT NULL DEFAULT '',
+  `picture` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `function1`
+--
+
+LOCK TABLES `function1` WRITE;
+/*!40000 ALTER TABLE `function1` DISABLE KEYS */;
+INSERT INTO `function1` VALUES (10,'Dishes','pic\\b1.jpg'),
+(11,'RawMaterials','pic\\b2.jpg'),
+(12,'Sales','pic\\b3.jpg'),
+(13,'Personal','pic\\b4.jpg');
+/*!40000 ALTER TABLE `function1` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Table structure for table `personal`
+--
+
+DROP TABLE IF EXISTS `personal`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `personal` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT ,
+  `name` varchar(50) DEFAULT NULL,
+  `address` varchar(50) DEFAULT NULL,
+  `job` varchar(50) DEFAULT NULL ,
+  `salary` varchar(50) DEFAULT NULL ,
+
+
+
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+truncate table personal;
+
+--
+-- Dumping data for table `personal`
+--
+
+LOCK TABLES `personal` WRITE;
+/*!40000 ALTER TABLE `personal` DISABLE KEYS */;
+
+INSERT INTO `personal` VALUES (1,'Mike','DiningHallNo.1','purchase','7000'),(2,'Kevin','DiningHallNo.1','cook','8000'),(3,'James','DiningHallNo.2','Clean','6000');
+
+/*!40000 ALTER TABLE `personal` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Table structure for table `shop_user`
+--
+
+DROP TABLE IF EXISTS `shop_user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_user` (
+  `Id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `UserName` varchar(20) NOT NULL DEFAULT '',
+  `PassWord` varchar(50) NOT NULL DEFAULT '',
+  `Names` varchar(20) DEFAULT NULL,
+  `Sex` varchar(20) DEFAULT NULL,
+  `Address` varchar(150) DEFAULT NULL,
+  `Phone` varchar(25) DEFAULT NULL,
+
+
+  PRIMARY KEY (`Id`),
+UNIQUE KEY `UserName` (`UserName`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+--
+-- Dumping data for table `shop_user`
+--
+
+LOCK TABLES `shop_user` WRITE;
+
+INSERT INTO `shop_user` VALUES (1,'wkf','wkf','Mikasa','Male','Church Street',13121571001);
+
+UNLOCK TABLES;
+
+
+
+
+
+--
+-- Table structure for table `shop_userr`
+--
+
+DROP TABLE IF EXISTS `shop_userr`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_userr` (
+  `Id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `UserName` varchar(20) NOT NULL DEFAULT '',
+  `PassWord` varchar(50) NOT NULL DEFAULT '',
+  `Names` varchar(20) DEFAULT NULL,
+  `Sex` varchar(20) DEFAULT NULL,
+  `Address` varchar(150) DEFAULT NULL,
+  `Phone` varchar(25) DEFAULT NULL,
+
+
+  PRIMARY KEY (`Id`),
+UNIQUE KEY `UserName` (`UserName`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+--
+-- Dumping data for table `shop_userr`
+--
+
+LOCK TABLES `shop_userr` WRITE;
+
+INSERT INTO `shop_userr` VALUES (1,'wkf1','wkf1','Mikasa','Male','Church Street',13121571001);
+
+UNLOCK TABLES;
+
+
+
+
+--
+-- Table structure for table `shop_usersup`
+--
+
+DROP TABLE IF EXISTS `shop_usersup`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `shop_usersup` (
+  `Id` bigint(11) NOT NULL AUTO_INCREMENT,
+  `UserName` varchar(20) NOT NULL DEFAULT '',
+  `PassWord` varchar(50) NOT NULL DEFAULT '',
+  `Names` varchar(20) DEFAULT NULL,
+  `Sex` varchar(20) DEFAULT NULL,
+  `Address` varchar(150) DEFAULT NULL,
+  `Phone` varchar(25) DEFAULT NULL,
+
+
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
+
+--
+-- Dumping data for table `shop_usersup`
+--
+
+LOCK TABLES `shop_usersup` WRITE;
+
+INSERT INTO `shop_usersup` VALUES (1,'supadmin','supadmin','Mikasa','Male','Church Street',13121571001);
+
+UNLOCK TABLES;
+
+
+
+
+
+
+
+
+
+
+
+
+--
+-- Table structure for table `comment`
+--
+
+DROP TABLE IF EXISTS `comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comment` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT ,
+  `name` varchar(50) DEFAULT NULL,
+  `score` varchar(50) DEFAULT NULL,
+  `comm` varchar(50) DEFAULT NULL ,
+
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+truncate table comment;
+
+--
+-- Dumping data for table `comment`
+--
+
+LOCK TABLES `comment` WRITE;
+/*!40000 ALTER TABLE `comment` DISABLE KEYS */;
+
+INSERT INTO `comment` VALUES (1,'tomato egg','3','taste good'),(2,'Carrot potato','3','great'),(3,'Fresh chicken','3','great'),(4,'tomato egg','5','taste good'),(5,'Carrot potato','5','great'),(6,'Fresh chicken','5','great');
+
+/*!40000 ALTER TABLE `comment` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+--
+-- Table structure for table `ghelp`
+--
+
+
+DROP TABLE IF EXISTS `ghelp`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `ghelp` (
+  `Id` int(11) NOT NULL ,
+  `helpinfo` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`Id`)
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `ghelp`
+--
+
+LOCK TABLES `ghelp` WRITE;
+/*!40000 ALTER TABLE `ghelp` DISABLE KEYS */;
+INSERT INTO `ghelp` VALUES (11,'pic\\t4.png'),(12,'pic\\t3.png'),(13,'pic\\t2.png');
+/*!40000 ALTER TABLE `ghelp` ENABLE KEYS */;
+UNLOCK TABLES;
+
+DROP TABLE IF EXISTS `dish`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dish` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT ,
+  `Cname` varchar(50) DEFAULT NULL,
+  `price` varchar(50) DEFAULT NULL ,
+  `Dname` varchar(50) DEFAULT NULL,
+  `Dtype` varchar(50) DEFAULT NULL ,
+  `total` varchar(50) DEFAULT NULL ,
+  `dtime` varchar(50) DEFAULT NULL ,
+
+
+
+
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+
+
+
+
+DROP TABLE IF EXISTS `chart1`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `chart1` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT,
+  PRIMARY KEY (`ID`),
+  `DishID` bigint(20) DEFAULT NULL,
+  `Dname1` varchar(50) DEFAULT NULL,
+  `avescore` float DEFAULT NULL
+
+
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+
+LOCK TABLES `dish` WRITE;
+/*!40000 ALTER TABLE `dish` DISABLE KEYS */;
+
+
+
+/*!40000 ALTER TABLE `dish` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+
+
+DROP TABLE IF EXISTS `comment`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `comment` (
+  `ID` bigint(20) NOT NULL AUTO_INCREMENT ,
+  `name` varchar(50) DEFAULT NULL,
+  `score` varchar(50) DEFAULT NULL,
+  `comm` varchar(50) DEFAULT NULL ,
+
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+
+
+
+delimiter || 
+DROP TRIGGER IF EXISTS insert1||
+CREATE TRIGGER insert1
+AFTER INSERT ON dish FOR EACH ROW
+BEGIN
+insert into chart1(DishID,Dname1) values(new.ID,new.Dname);
+END||
+delimiter ;
+
+delimiter || 
+DROP TRIGGER IF EXISTS delete1||
+CREATE TRIGGER delete1
+AFTER DELETE ON dish FOR EACH ROW
+BEGIN
+delete from chart1 where DishID=old.ID;
+END||
+delimiter ;
+
+delimiter || 
+DROP TRIGGER IF EXISTS insert3||
+CREATE TRIGGER insert3
+AFTER UPDATE ON dish FOR EACH ROW
+BEGIN
+update chart1 set DishID=new.ID,Dname1=new.Dname where DishID=old.ID;
+END||
+delimiter ;
+
+
+
+
+delimiter || 
+DROP TRIGGER IF EXISTS insert4||
+CREATE TRIGGER insert4
+AFTER UPDATE ON comment FOR EACH ROW
+BEGIN
+update chart1 set avescore=new.AVG(score) where Dname=old.name;
+END||
+delimiter ;
+
+delimiter || 
+DROP TRIGGER IF EXISTS insert5||
+CREATE TRIGGER insert5
+AFTER INSERT ON comment FOR EACH ROW
+BEGIN
+declare avg1 float;
+select AVG(score) into avg1 from comment where name=new.name;
+update chart1 set avescore=avg1 where Dname1=new.name;
+END||
+delimiter ;
+
+INSERT INTO `dish` VALUES (1,'DiningHallNo.1','17','tomato egg','Lunch','200','2022-2-23-11:25'),(2,'DiningHallNo.1','20','Fresh chicken','Lunch','400','2022-2-24-5:22'),(3,'DiningHallNo.2','15','Carrot potato','Dinner','400','2022-2-27-4:15');
+INSERT INTO `comment` VALUES (1,'tomato egg','1','taste good'),(2,'Carrot potato','3','great'),(3,'Fresh chicken','5','great'),(4,'tomato egg','1','taste good'),(5,'Carrot potato','3','great'),(6,'Fresh chicken','5','great');
+
+
+
+
+
+
+set global time_zone='+8:00'; 
+
+
+
